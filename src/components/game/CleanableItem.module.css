@@ -1,0 +1,31 @@
+.item {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  touch-action: none;
+  user-select: none;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.2s ease;
+  z-index: 3;
+}
+
+.item:active {
+  transform: translate(-50%, -50%) scale(0.94);
+}
+
+.emoji {
+  font-size: clamp(1.4rem, 5vw, 3.2rem);
+  line-height: 1;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+
+.blob {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 46% 54% 52% 48% / 50% 46% 54% 50%;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}

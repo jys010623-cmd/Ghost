@@ -1,0 +1,35 @@
+:root {
+  /* 색상 팔레트 — 포근하고 신비로운 톤 */
+  --c-purple-deep: #241a38;
+  --c-purple-dark: #2f2450;
+  --c-purple: #4a3a76;
+  --c-lavender: #b9a7e6;
+  --c-lavender-soft: #d9cef4;
+  --c-ivory: #f6f0e2;
+  --c-yellow-warm: #ffd98a;
+  --c-yellow-glow: #ffe9b8;
+  --c-wood: #8a5a3b;
+  --c-wood-dark: #5e3d28;
+  --c-gray-soft: #cfc9d8;
+
+  /* 표면 / 카드 */
+  --surface-card: rgba(38, 30, 60, 0.72);
+  --surface-card-light: rgba(246, 240, 226, 0.9);
+  --border-soft: rgba(217, 206, 244, 0.28);
+
+  --text-on-dark: #f3eefc;
+  --text-muted: #b7add0;
+  --text-on-light: #3a2f52;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+
+  --shadow-soft: 0 10px 30px rgba(10, 6, 24, 0.35);
+  --shadow-glow: 0 0 24px rgba(255, 217, 138, 0.45);
+
+  --font-ui: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", "맑은 고딕", system-ui, -apple-system, sans-serif;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}

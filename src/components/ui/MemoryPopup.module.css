@@ -1,0 +1,64 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(12, 8, 26, 0.45);
+  backdrop-filter: blur(3px);
+  z-index: 50;
+  padding: 5%;
+}
+
+.card {
+  width: min(360px, 92%);
+  text-align: center;
+  padding: 26px 22px;
+  background: var(--surface-card-light);
+  color: var(--text-on-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft), var(--shadow-glow);
+  animation: pop 0.4s var(--ease-soft);
+}
+
+.badge {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--c-wood);
+  margin-bottom: 12px;
+}
+
+.icon {
+  font-size: 3.4rem;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #5a4d6e;
+  margin-bottom: 18px;
+}
+
+.btn {
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 800;
+  background: linear-gradient(160deg, var(--c-yellow-warm), #ffc14d);
+  color: #4a3416;
+  transition: transform 0.12s, filter 0.12s;
+}
+.btn:hover { filter: brightness(1.06); }
+.btn:active { transform: scale(0.96); }
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.86); }
+  to { opacity: 1; transform: scale(1); }
+}

@@ -1,0 +1,71 @@
+.scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 창문 빛 등 간단한 분위기 장식 (플레이스홀더) */
+.window {
+  position: absolute;
+  top: 8%;
+  left: 12%;
+  width: 20%;
+  height: 34%;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(180deg, rgba(255, 240, 200, 0.18), rgba(180, 160, 220, 0.06));
+  border: 3px solid rgba(90, 70, 50, 0.35);
+  box-shadow: inset 0 0 20px rgba(255, 240, 200, 0.15);
+}
+.window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(90, 70, 50, 0.35), rgba(90, 70, 50, 0.35)) 50% 0 / 3px 100% no-repeat,
+    linear-gradient(rgba(90, 70, 50, 0.35), rgba(90, 70, 50, 0.35)) 0 50% / 100% 3px no-repeat;
+}
+
+.cleanables {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.rotateHint {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 10%;
+  background: rgba(20, 14, 40, 0.92);
+  color: var(--c-ivory);
+  z-index: 80;
+  font-size: 1rem;
+}
+.rotateHint .spin {
+  font-size: 3rem;
+  animation: spin 2.4s ease-in-out infinite;
+}
+
+@media (max-aspect-ratio: 3/4) and (max-width: 640px) {
+  .rotateHint {
+    display: flex;
+  }
+}
+
+@keyframes spin {
+  0%, 100% { transform: rotate(-12deg); }
+  50% { transform: rotate(78deg); }
+}

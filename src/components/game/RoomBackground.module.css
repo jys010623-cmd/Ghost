@@ -1,0 +1,78 @@
+.room {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+}
+
+.layerImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- CSS 플레이스홀더 방 (쿼터뷰 느낌: 벽 + 바닥) ---- */
+.wall {
+  position: absolute;
+  inset: 0 0 42% 0;
+}
+.floor {
+  position: absolute;
+  inset: 58% 0 0 0;
+  transform: perspective(600px) rotateX(38deg);
+  transform-origin: top center;
+}
+.rug {
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  bottom: 6%;
+  height: 16%;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+/* 더러운 방 톤 */
+.dirty .wall {
+  background: linear-gradient(180deg, #2c2440 0%, #3a3152 100%);
+}
+.dirty .floor {
+  background:
+    repeating-linear-gradient(90deg, #3a2c22 0 8%, #34281f 8% 16%);
+}
+.dirty .rug {
+  background: radial-gradient(circle, #4a3a5e, #2f2440);
+}
+
+/* 깨끗한 방 톤 (따뜻함) */
+.clean .wall {
+  background: linear-gradient(180deg, #6a5aa0 0%, #b9a7e6 100%);
+}
+.clean .floor {
+  background:
+    repeating-linear-gradient(90deg, #b3814f 0 8%, #a2743f 8% 16%);
+}
+.clean .rug {
+  background: radial-gradient(circle, #ffe9b8, #ffd98a);
+}
+
+.cleanLayer {
+  transition: opacity 1.2s var(--ease-soft);
+}
+
+/* 화면을 어둡고 차갑게 덮는 필터 — 청소가 진행되면 옅어진다 */
+.gloom {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 50% 30%, transparent 25%, rgba(12, 8, 26, 0.55) 100%),
+    linear-gradient(180deg, rgba(20, 14, 40, 0.35), rgba(12, 8, 26, 0.5));
+  transition: opacity 1.2s var(--ease-soft);
+  pointer-events: none;
+}
