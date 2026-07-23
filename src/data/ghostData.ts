@@ -13,11 +13,11 @@ export const GHOST_POSITIONS: GhostPosition[] = [
 
 /** 표정별 이미지 경로 — 없으면 CSS 플레이스홀더로 대체된다 */
 export const GHOST_IMAGES: Record<GhostMood, string> = {
-  normal: "/assets/ghosts/mongsil-normal.png",
-  sad: "/assets/ghosts/mongsil-sad.png",
-  happy: "/assets/ghosts/mongsil-happy.png",
-  surprised: "/assets/ghosts/mongsil-surprised.png",
-  sleep: "/assets/ghosts/mongsil-sleep.png",
+  normal: "/assets/ghosts/mongsil/mongsil-normal.png",
+  sad: "/assets/ghosts/mongsil/mongsil-sad.png",
+  happy: "/assets/ghosts/mongsil/mongsil-happy.png",
+  surprised: "/assets/ghosts/mongsil/mongsil-surprised.png",
+  sleep: "/assets/ghosts/mongsil/mongsil-sleep.png",
 };
 
 /** 진행도(0~100)에 따른 표정 */

@@ -1,0 +1,102 @@
+{
+  "rooms": {
+    "livingRoom": {
+      "dirty": "/assets/rooms/living-room-dirty.webp",
+      "clean": "/assets/rooms/living-room-clean.webp",
+      "overlays": {
+        "warm30": "/assets/rooms/overlays/warm-light-30.png",
+        "warm60": "/assets/rooms/overlays/warm-light-60.png",
+        "warm90": "/assets/rooms/overlays/warm-light-90.png",
+        "window": "/assets/rooms/overlays/window-light.png",
+        "fireplace": "/assets/rooms/overlays/fireplace-glow.png"
+      }
+    }
+  },
+  "ghosts": {
+    "mongsil": {
+      "normal": "/assets/ghosts/mongsil/mongsil-normal.png",
+      "sad": "/assets/ghosts/mongsil/mongsil-sad.png",
+      "surprised": "/assets/ghosts/mongsil/mongsil-surprised.png",
+      "happy": "/assets/ghosts/mongsil/mongsil-happy.png",
+      "sleep": "/assets/ghosts/mongsil/mongsil-sleep.png",
+      "thankful": "/assets/ghosts/mongsil/mongsil-thankful.png",
+      "animation": {
+        "idleFloat": [
+          "/assets/ghosts/mongsil/animation/idle-float-01.png",
+          "/assets/ghosts/mongsil/animation/idle-float-02.png",
+          "/assets/ghosts/mongsil/animation/idle-float-03.png",
+          "/assets/ghosts/mongsil/animation/idle-float-04.png",
+          "/assets/ghosts/mongsil/animation/idle-float-05.png",
+          "/assets/ghosts/mongsil/animation/idle-float-06.png"
+        ],
+        "happyBounce": [
+          "/assets/ghosts/mongsil/animation/happy-bounce-01.png",
+          "/assets/ghosts/mongsil/animation/happy-bounce-02.png",
+          "/assets/ghosts/mongsil/animation/happy-bounce-03.png",
+          "/assets/ghosts/mongsil/animation/happy-bounce-04.png"
+        ]
+      }
+    }
+  },
+  "cleanables": {
+    "dust": [
+      "/assets/cleanables/dust/dust-01.png",
+      "/assets/cleanables/dust/dust-02.png",
+      "/assets/cleanables/dust/dust-03.png",
+      "/assets/cleanables/dust/dust-04.png",
+      "/assets/cleanables/dust/dust-puff-01.png",
+      "/assets/cleanables/dust/dust-puff-02.png"
+    ],
+    "cobweb": [
+      "/assets/cleanables/cobweb/cobweb-corner-01.png",
+      "/assets/cleanables/cobweb/cobweb-corner-02.png",
+      "/assets/cleanables/cobweb/cobweb-wide-01.png",
+      "/assets/cleanables/cobweb/cobweb-small-01.png"
+    ],
+    "stain": [
+      "/assets/cleanables/stain/stain-floor-01.png",
+      "/assets/cleanables/stain/stain-floor-02.png",
+      "/assets/cleanables/stain/stain-table-01.png",
+      "/assets/cleanables/stain/stain-sofa-01.png",
+      "/assets/cleanables/stain/stain-window-01.png"
+    ],
+    "trash": [
+      "/assets/cleanables/trash/trash-paper-01.png",
+      "/assets/cleanables/trash/trash-paper-02.png",
+      "/assets/cleanables/trash/trash-cup-01.png",
+      "/assets/cleanables/trash/trash-box-01.png",
+      "/assets/cleanables/trash/trash-book-01.png",
+      "/assets/cleanables/trash/trash-leaf-01.png"
+    ]
+  },
+  "memories": {
+    "familyPhotoFound": "/assets/memories/family-photo-found.png",
+    "familyPhotoRestored": "/assets/memories/family-photo-restored.png"
+  },
+  "tools": {
+    "hand": "/assets/tools/tool-hand.png",
+    "cloth": "/assets/tools/tool-cloth.png",
+    "duster": "/assets/tools/tool-duster.png",
+    "broom": "/assets/tools/tool-broom.png"
+  },
+  "effects": {
+    "sparkleSmall01": "/assets/effects/sparkle-small-01.png",
+    "sparkleSmall02": "/assets/effects/sparkle-small-02.png",
+    "sparkleCluster": "/assets/effects/sparkle-cluster.png",
+    "cleanShine": "/assets/effects/clean-shine.png",
+    "ghostGlow": "/assets/effects/ghost-glow.png",
+    "memoryGlow": "/assets/effects/memory-glow.png",
+    "dustParticle": "/assets/effects/dust-particle.png"
+  },
+  "ui": {
+    "dialogueGhostFrame": "/assets/ui/dialogue-ghost-frame.png",
+    "memoryCardDecoration": "/assets/ui/memory-card-decoration.png",
+    "roomCompleteDecoration": "/assets/ui/room-complete-decoration.png",
+    "objectiveIcon": "/assets/ui/objective-icon.png",
+    "progressLeaf": "/assets/ui/progress-leaf.png"
+  },
+  "title": {
+    "background": "/assets/title/title-background.webp",
+    "mongsil": "/assets/title/title-mongsil.png"
+  }
+}

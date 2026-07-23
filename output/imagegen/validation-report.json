@@ -1,0 +1,1319 @@
+{
+  "manifestAssetCount": 64,
+  "existingCount": 64,
+  "missing": [],
+  "alphaIssues": [],
+  "roomDimensionIssues": [],
+  "roomEdgeCorrelation": 0.6284,
+  "roomEdgeMAE": 10.858,
+  "files": [
+    {
+      "path": "/assets/rooms/living-room-dirty.webp",
+      "size": [
+        2048,
+        1152
+      ],
+      "mode": "RGB",
+      "bytes": 398786
+    },
+    {
+      "path": "/assets/rooms/living-room-clean.webp",
+      "size": [
+        2048,
+        1152
+      ],
+      "mode": "RGB",
+      "bytes": 625434
+    },
+    {
+      "path": "/assets/rooms/overlays/warm-light-30.png",
+      "size": [
+        2048,
+        1152
+      ],
+      "mode": "RGBA",
+      "bytes": 58870,
+      "cornerAlpha": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "alphaBBox": [
+        0,
+        0,
+        2048,
+        1152
+      ]
+    },
+    {
+      "path": "/assets/rooms/overlays/warm-light-60.png",
+      "size": [
+        2048,
+        1152
+      ],
+      "mode": "RGBA",
+      "bytes": 92973,
+      "cornerAlpha": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "alphaBBox": [
+        0,
+        0,
+        2048,
+        1152
+      ]
+    },
+    {
+      "path": "/assets/rooms/overlays/warm-light-90.png",
+      "size": [
+        2048,
+        1152
+      ],
+      "mode": "RGBA",
+      "bytes": 108634,
+      "cornerAlpha": [
+        2,
+        2,
+        2,
+        3
+      ],
+      "alphaBBox": [
+        0,
+        0,
+        2048,
+        1152
+      ]
+    },
+    {
+      "path": "/assets/rooms/overlays/window-light.png",
+      "size": [
+        2048,
+        1152
+      ],
+      "mode": "RGBA",
+      "bytes": 281351,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        316,
+        0,
+        1645,
+        1152
+      ]
+    },
+    {
+      "path": "/assets/rooms/overlays/fireplace-glow.png",
+      "size": [
+        2048,
+        1152
+      ],
+      "mode": "RGBA",
+      "bytes": 178667,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        1116,
+        233,
+        1825,
+        888
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/mongsil-normal.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 621300,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        150,
+        55,
+        873,
+        969
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/mongsil-sad.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 608933,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        156,
+        55,
+        867,
+        969
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/mongsil-surprised.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 593307,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        152,
+        55,
+        872,
+        969
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/mongsil-happy.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 606070,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        141,
+        55,
+        882,
+        969
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/mongsil-sleep.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 578189,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        143,
+        55,
+        880,
+        969
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/mongsil-thankful.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 599670,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        171,
+        55,
+        852,
+        969
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/animation/idle-float-01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 621308,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        150,
+        63,
+        873,
+        977
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/animation/idle-float-02.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 621258,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        148,
+        55,
+        871,
+        969
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/animation/idle-float-03.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 621322,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        150,
+        45,
+        873,
+        959
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/animation/idle-float-04.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 621349,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        152,
+        40,
+        875,
+        954
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/animation/idle-float-05.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 621324,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        151,
+        48,
+        874,
+        962
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/animation/idle-float-06.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 621298,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        150,
+        59,
+        873,
+        973
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/animation/happy-bounce-01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 606061,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        141,
+        63,
+        882,
+        977
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/animation/happy-bounce-02.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 608364,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        147,
+        44,
+        877,
+        944
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/animation/happy-bounce-03.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 594869,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        152,
+        30,
+        871,
+        917
+      ]
+    },
+    {
+      "path": "/assets/ghosts/mongsil/animation/happy-bounce-04.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 614628,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        144,
+        48,
+        879,
+        955
+      ]
+    },
+    {
+      "path": "/assets/cleanables/dust/dust-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 139445,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        159,
+        476,
+        352
+      ]
+    },
+    {
+      "path": "/assets/cleanables/dust/dust-02.png",
+      "size": [
+        768,
+        768
+      ],
+      "mode": "RGBA",
+      "bytes": 56635,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        35,
+        358,
+        733,
+        409
+      ]
+    },
+    {
+      "path": "/assets/cleanables/dust/dust-03.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 110253,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        35,
+        152,
+        477,
+        359
+      ]
+    },
+    {
+      "path": "/assets/cleanables/dust/dust-04.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 143251,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        53,
+        476,
+        459
+      ]
+    },
+    {
+      "path": "/assets/cleanables/dust/dust-puff-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 158932,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        102,
+        476,
+        410
+      ]
+    },
+    {
+      "path": "/assets/cleanables/dust/dust-puff-02.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 107626,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        166,
+        476,
+        345
+      ]
+    },
+    {
+      "path": "/assets/cleanables/cobweb/cobweb-corner-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 87556,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        37,
+        36,
+        475,
+        476
+      ]
+    },
+    {
+      "path": "/assets/cleanables/cobweb/cobweb-corner-02.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 92288,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        39,
+        36,
+        472,
+        476
+      ]
+    },
+    {
+      "path": "/assets/cleanables/cobweb/cobweb-wide-01.png",
+      "size": [
+        768,
+        768
+      ],
+      "mode": "RGBA",
+      "bytes": 74171,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        294,
+        732,
+        473
+      ]
+    },
+    {
+      "path": "/assets/cleanables/cobweb/cobweb-small-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 161028,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        35,
+        46,
+        477,
+        466
+      ]
+    },
+    {
+      "path": "/assets/cleanables/stain/stain-floor-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 181557,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        103,
+        476,
+        408
+      ]
+    },
+    {
+      "path": "/assets/cleanables/stain/stain-floor-02.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 133904,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        149,
+        476,
+        362
+      ]
+    },
+    {
+      "path": "/assets/cleanables/stain/stain-table-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 75727,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        32,
+        41,
+        480,
+        471
+      ]
+    },
+    {
+      "path": "/assets/cleanables/stain/stain-sofa-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 233903,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        32,
+        82,
+        480,
+        430
+      ]
+    },
+    {
+      "path": "/assets/cleanables/stain/stain-window-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 197898,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        66,
+        32,
+        445,
+        480
+      ]
+    },
+    {
+      "path": "/assets/cleanables/trash/trash-paper-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 271644,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        37,
+        36,
+        474,
+        476
+      ]
+    },
+    {
+      "path": "/assets/cleanables/trash/trash-paper-02.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 129017,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        131,
+        476,
+        381
+      ]
+    },
+    {
+      "path": "/assets/cleanables/trash/trash-cup-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 207498,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        86,
+        36,
+        426,
+        476
+      ]
+    },
+    {
+      "path": "/assets/cleanables/trash/trash-box-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 245911,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        50,
+        476,
+        462
+      ]
+    },
+    {
+      "path": "/assets/cleanables/trash/trash-book-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 189400,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        102,
+        476,
+        409
+      ]
+    },
+    {
+      "path": "/assets/cleanables/trash/trash-leaf-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 188621,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        81,
+        476,
+        431
+      ]
+    },
+    {
+      "path": "/assets/memories/family-photo-found.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 1156136,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        124,
+        70,
+        899,
+        954
+      ]
+    },
+    {
+      "path": "/assets/memories/family-photo-restored.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 1103304,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        126,
+        70,
+        897,
+        954
+      ]
+    },
+    {
+      "path": "/assets/tools/tool-hand.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 207109,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        46,
+        32,
+        465,
+        480
+      ]
+    },
+    {
+      "path": "/assets/tools/tool-cloth.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 255511,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        32,
+        63,
+        480,
+        449
+      ]
+    },
+    {
+      "path": "/assets/tools/tool-duster.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 240851,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        38,
+        32,
+        474,
+        480
+      ]
+    },
+    {
+      "path": "/assets/tools/tool-broom.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 228212,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        48,
+        32,
+        464,
+        480
+      ]
+    },
+    {
+      "path": "/assets/effects/sparkle-small-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 105524,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        32,
+        476,
+        480
+      ]
+    },
+    {
+      "path": "/assets/effects/sparkle-small-02.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 128084,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        35,
+        32,
+        477,
+        480
+      ]
+    },
+    {
+      "path": "/assets/effects/sparkle-cluster.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 87663,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        37,
+        32,
+        474,
+        480
+      ]
+    },
+    {
+      "path": "/assets/effects/clean-shine.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 146160,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        32,
+        57,
+        480,
+        455
+      ]
+    },
+    {
+      "path": "/assets/effects/ghost-glow.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 160697,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        32,
+        106,
+        480,
+        405
+      ]
+    },
+    {
+      "path": "/assets/effects/memory-glow.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 159174,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        32,
+        102,
+        480,
+        409
+      ]
+    },
+    {
+      "path": "/assets/effects/dust-particle.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 93896,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        32,
+        32,
+        480,
+        480
+      ]
+    },
+    {
+      "path": "/assets/ui/dialogue-ghost-frame.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 97496,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        32,
+        119,
+        480,
+        392
+      ]
+    },
+    {
+      "path": "/assets/ui/memory-card-decoration.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 254555,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        36,
+        32,
+        475,
+        480
+      ]
+    },
+    {
+      "path": "/assets/ui/room-complete-decoration.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 177965,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        50,
+        32,
+        462,
+        480
+      ]
+    },
+    {
+      "path": "/assets/ui/objective-icon.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 147650,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        52,
+        32,
+        460,
+        480
+      ]
+    },
+    {
+      "path": "/assets/ui/progress-leaf.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "bytes": 202006,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        85,
+        32,
+        427,
+        480
+      ]
+    },
+    {
+      "path": "/assets/title/title-background.webp",
+      "size": [
+        2048,
+        1152
+      ],
+      "mode": "RGB",
+      "bytes": 288536
+    },
+    {
+      "path": "/assets/title/title-mongsil.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 582655,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBBox": [
+        196,
+        55,
+        828,
+        969
+      ]
+    }
+  ]
+}
