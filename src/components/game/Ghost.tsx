@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import type { GhostMood, GhostPosition } from "../../types/game";
 import { GHOST_IMAGES, GHOST_NAME } from "../../data/ghostData";
+import { ASSETS } from "../../data/assets";
+import { AssetImage } from "../common/AssetImage";
 import styles from "./Ghost.module.css";
 
 interface GhostProps {
@@ -33,6 +35,11 @@ export function Ghost({ mood, position, jumping }: GhostProps) {
       role="img"
     >
       <div className={`${styles.float} ${jumping ? styles.jump : ""}`}>
+        <AssetImage
+          src={ASSETS.effects.ghostGlow}
+          className={styles.glow}
+          style={{ opacity: mood === "happy" ? 0.9 : 0.4 }}
+        />
         {imgOk ? (
           <img
             className={styles.image}

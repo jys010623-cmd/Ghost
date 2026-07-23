@@ -1,4 +1,7 @@
+import { useState } from "react";
 import { GhostFace } from "./GhostFace";
+import { AssetImage } from "./AssetImage";
+import { ASSETS } from "../../data/assets";
 import styles from "./StartScreen.module.css";
 
 interface StartScreenProps {
@@ -8,10 +11,22 @@ interface StartScreenProps {
 }
 
 export function StartScreen({ hasSave, onStart, onNewGame }: StartScreenProps) {
+  const [heroOk, setHeroOk] = useState(true);
   return (
     <div className={styles.screen}>
+      <AssetImage src={ASSETS.title.background} className={styles.bg} />
       <div className={styles.ghostWrap}>
-        <GhostFace mood="sleep" size={110} />
+        {heroOk ? (
+          <img
+            className={styles.hero}
+            src={ASSETS.title.mongsil}
+            alt=""
+            draggable={false}
+            onError={() => setHeroOk(false)}
+          />
+        ) : (
+          <GhostFace mood="sleep" size={110} />
+        )}
       </div>
       <h1 className={styles.title}>몽실의 방</h1>
       <p className={styles.sub}>

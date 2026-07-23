@@ -10,6 +10,7 @@
 }
 
 .card {
+  position: relative;
   width: min(360px, 92%);
   text-align: center;
   padding: 26px 22px;
@@ -18,6 +19,34 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft), var(--shadow-glow);
   animation: pop 0.4s var(--ease-soft);
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 150%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  mix-blend-mode: screen;
+}
+
+.deco {
+  position: absolute;
+  top: -14px;
+  right: -10px;
+  width: 72px;
+  pointer-events: none;
+}
+
+.photo {
+  width: min(180px, 70%);
+  height: auto;
+  margin: 4px auto 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(60, 40, 20, 0.3);
+  display: block;
 }
 
 .badge {

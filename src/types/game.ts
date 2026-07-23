@@ -35,6 +35,7 @@ export interface ToolInfo {
   id: CleaningTool;
   name: string;
   icon: string;
+  image: string;
   shortcut: string;
   hint: string;
 }

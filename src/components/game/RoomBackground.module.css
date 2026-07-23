@@ -66,6 +66,20 @@
   transition: opacity 1.2s var(--ease-soft);
 }
 
+.overlay,
+.overlayWarm {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  transition: opacity 1.2s var(--ease-soft);
+}
+.overlayWarm {
+  mix-blend-mode: screen;
+}
+
 /* 화면을 어둡고 차갑게 덮는 필터 — 청소가 진행되면 옅어진다 */
 .gloom {
   position: absolute;

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import type { DialogueContent } from "../../types/game";
 import { GhostFace } from "../common/GhostFace";
+import { AssetImage } from "../common/AssetImage";
+import { ASSETS } from "../../data/assets";
 import styles from "./DialogueBox.module.css";
 
 interface DialogueBoxProps {
@@ -43,7 +45,10 @@ export function DialogueBox({ content, onClose }: DialogueBoxProps) {
         aria-modal="true"
         aria-label={`${content.name}의 대화`}
       >
-        <GhostFace mood={content.mood} size={68} />
+        <div className={styles.portrait}>
+          <GhostFace mood={content.mood} size={68} />
+          <AssetImage src={ASSETS.ui.dialogueGhostFrame} className={styles.frame} />
+        </div>
         <div className={styles.body}>
           <div className={styles.name}>{content.name}</div>
           <p className={styles.line}>{content.lines[lineIndex]}</p>

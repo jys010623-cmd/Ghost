@@ -14,9 +14,32 @@
   z-index: 60;
 }
 
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.screen > *:not(.bg) {
+  position: relative;
+  z-index: 1;
+}
+
 .ghostWrap {
   animation: bob 4s ease-in-out infinite;
   margin-bottom: 6px;
+}
+
+.hero {
+  width: clamp(120px, 26vw, 200px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 12px 20px rgba(10, 6, 24, 0.45));
 }
 
 .title {

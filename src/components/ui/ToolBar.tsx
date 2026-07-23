@@ -1,10 +1,31 @@
-import type { CleaningTool } from "../../types/game";
+import { useState } from "react";
+import type { CleaningTool, ToolInfo } from "../../types/game";
 import { TOOLS } from "../../data/roomData";
 import styles from "./ToolBar.module.css";
 
 interface ToolBarProps {
   selected: CleaningTool;
   onSelect: (tool: CleaningTool) => void;
+}
+
+function ToolIcon({ tool }: { tool: ToolInfo }) {
+  const [imgOk, setImgOk] = useState(true);
+  if (imgOk) {
+    return (
+      <img
+        className={styles.iconImg}
+        src={tool.image}
+        alt=""
+        draggable={false}
+        onError={() => setImgOk(false)}
+      />
+    );
+  }
+  return (
+    <span className={styles.icon} aria-hidden="true">
+      {tool.icon}
+    </span>
+  );
 }
 
 export function ToolBar({ selected, onSelect }: ToolBarProps) {
@@ -27,9 +48,7 @@ export function ToolBar({ selected, onSelect }: ToolBarProps) {
                 ✓
               </span>
             )}
-            <span className={styles.icon} aria-hidden="true">
-              {tool.icon}
-            </span>
+            <ToolIcon tool={tool} />
             <span className={styles.name}>{tool.name}</span>
             <span className={styles.key} aria-hidden="true">
               {tool.shortcut}

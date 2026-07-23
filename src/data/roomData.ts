@@ -1,4 +1,5 @@
 import type { CleanableItem, CleaningTool, CleanableType, ToolInfo } from "../types/game";
+import { ASSETS } from "./assets";
 
 export const ROOM_DIRTY_IMAGE = "/assets/rooms/living-room-dirty.webp";
 export const ROOM_CLEAN_IMAGE = "/assets/rooms/living-room-clean.webp";
@@ -7,10 +8,10 @@ export const ROOM_GOAL = "거실을 깨끗하게 만들기";
 
 /** 도구 정의 — 손 / 걸레 / 먼지털이 / 빗자루 */
 export const TOOLS: ToolInfo[] = [
-  { id: "hand", name: "손", icon: "🤚", shortcut: "1", hint: "쓰레기를 주워요" },
-  { id: "cloth", name: "걸레", icon: "🧽", shortcut: "2", hint: "얼룩을 닦아요" },
-  { id: "duster", name: "먼지털이", icon: "🪶", shortcut: "3", hint: "거미줄을 걷어요" },
-  { id: "broom", name: "빗자루", icon: "🧹", shortcut: "4", hint: "먼지를 쓸어요" },
+  { id: "hand", name: "손", icon: "🤚", image: ASSETS.tools.hand, shortcut: "1", hint: "쓰레기를 주워요" },
+  { id: "cloth", name: "걸레", icon: "🧽", image: ASSETS.tools.cloth, shortcut: "2", hint: "얼룩을 닦아요" },
+  { id: "duster", name: "먼지털이", icon: "🪶", image: ASSETS.tools.duster, shortcut: "3", hint: "거미줄을 걷어요" },
+  { id: "broom", name: "빗자루", icon: "🧹", image: ASSETS.tools.broom, shortcut: "4", hint: "먼지를 쓸어요" },
 ];
 
 /** 오염물 종류별 표시 정보 (플레이스홀더 이모지 + 색) */

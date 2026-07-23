@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { ASSETS } from "../../data/assets";
+import { AssetImage } from "../common/AssetImage";
 import styles from "./CompletionModal.module.css";
 
 interface CompletionModalProps {
@@ -22,6 +24,7 @@ export function CompletionModal({ memoriesFound, onReset }: CompletionModalProps
         aria-modal="true"
         aria-label="거실 청소 완료"
       >
+        <AssetImage src={ASSETS.ui.roomCompleteDecoration} className={styles.deco} />
         <div className={styles.crown} aria-hidden="true">
           🌙✨
         </div>

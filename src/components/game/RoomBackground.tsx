@@ -4,6 +4,8 @@ import {
   ROOM_DIRTY_IMAGE,
   cleanBackgroundOpacity,
 } from "../../data/roomData";
+import { ASSETS } from "../../data/assets";
+import { AssetImage } from "../common/AssetImage";
 import styles from "./RoomBackground.module.css";
 
 interface RoomBackgroundProps {
@@ -55,6 +57,23 @@ export function RoomBackground({ progress }: RoomBackgroundProps) {
 
       {/* 어둡고 차가운 필터 */}
       <div className={styles.gloom} style={{ opacity: gloomOpacity }} />
+
+      {/* 창빛 + 따뜻한 조명 오버레이 — 진행도에 따라 점점 밝아진다 */}
+      <AssetImage
+        src={ASSETS.overlays.window}
+        className={styles.overlay}
+        style={{ opacity: 0.25 + (progress / 100) * 0.4 }}
+      />
+      <AssetImage
+        src={ASSETS.overlays.warm90}
+        className={styles.overlayWarm}
+        style={{ opacity: (progress / 100) * 0.85 }}
+      />
+      <AssetImage
+        src={ASSETS.overlays.fireplace}
+        className={styles.overlayWarm}
+        style={{ opacity: progress >= 60 ? ((progress - 60) / 40) * 0.7 : 0 }}
+      />
     </div>
   );
 }

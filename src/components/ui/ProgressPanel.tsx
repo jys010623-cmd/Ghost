@@ -1,4 +1,6 @@
 import { ROOM_GOAL } from "../../data/roomData";
+import { ASSETS } from "../../data/assets";
+import { AssetImage } from "../common/AssetImage";
 import styles from "./ProgressPanel.module.css";
 
 interface ProgressPanelProps {
@@ -20,7 +22,10 @@ export function ProgressPanel({
     <div className={styles.panel}>
       <div className={styles.info}>
         <div className={styles.topline}>
-          <span className={styles.goal}>현재 목표: {ROOM_GOAL}</span>
+          <span className={styles.goal}>
+            <AssetImage src={ASSETS.ui.objectiveIcon} className={styles.goalIcon} />
+            현재 목표: {ROOM_GOAL}
+          </span>
           <span className={styles.percent}>청소 진행도 {progress}%</span>
         </div>
         <div
