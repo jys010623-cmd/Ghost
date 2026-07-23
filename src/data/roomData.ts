@@ -1,8 +1,9 @@
 import type { CleanableItem, CleaningTool, CleanableType, ToolInfo } from "../types/game";
 import { ASSETS } from "./assets";
+import { asset } from "../utils/asset";
 
-export const ROOM_DIRTY_IMAGE = "/assets/rooms/living-room-dirty.webp";
-export const ROOM_CLEAN_IMAGE = "/assets/rooms/living-room-clean.webp";
+export const ROOM_DIRTY_IMAGE = asset("/assets/rooms/living-room-dirty.webp");
+export const ROOM_CLEAN_IMAGE = asset("/assets/rooms/living-room-clean.webp");
 
 export const ROOM_GOAL = "거실을 깨끗하게 만들기";
 
@@ -40,7 +41,7 @@ const imgFor = (type: CleanableType, variant: number) => {
     trash: ["trash-paper-01.png", "trash-paper-02.png", "trash-book-01.png"],
     stain: ["stain-floor-01.png", "stain-table-01.png", "stain-sofa-01.png"],
   };
-  return `/assets/cleanables/${type}/${filenames[type][variant]}`;
+  return asset(`/assets/cleanables/${type}/${filenames[type][variant]}`);
 };
 
 /** 거실 청소 오브젝트 — 먼지4 · 거미줄2 · 쓰레기3 · 얼룩3 = 12개 */

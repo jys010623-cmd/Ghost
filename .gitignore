@@ -5,3 +5,8 @@ dist-ssr
 .DS_Store
 .vscode/*
 !.vscode/extensions.json
+
+# 빌드 산출물 / 임시 파일
+*.tsbuildinfo
+*.log
+scratch-*

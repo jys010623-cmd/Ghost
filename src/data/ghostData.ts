@@ -1,4 +1,5 @@
 import type { GhostMood, GhostPosition } from "../types/game";
+import { asset } from "../utils/asset";
 
 export const GHOST_NAME = "몽실";
 
@@ -13,11 +14,11 @@ export const GHOST_POSITIONS: GhostPosition[] = [
 
 /** 표정별 이미지 경로 — 없으면 CSS 플레이스홀더로 대체된다 */
 export const GHOST_IMAGES: Record<GhostMood, string> = {
-  normal: "/assets/ghosts/mongsil/mongsil-normal.png",
-  sad: "/assets/ghosts/mongsil/mongsil-sad.png",
-  happy: "/assets/ghosts/mongsil/mongsil-happy.png",
-  surprised: "/assets/ghosts/mongsil/mongsil-surprised.png",
-  sleep: "/assets/ghosts/mongsil/mongsil-sleep.png",
+  normal: asset("/assets/ghosts/mongsil/mongsil-normal.png"),
+  sad: asset("/assets/ghosts/mongsil/mongsil-sad.png"),
+  happy: asset("/assets/ghosts/mongsil/mongsil-happy.png"),
+  surprised: asset("/assets/ghosts/mongsil/mongsil-surprised.png"),
+  sleep: asset("/assets/ghosts/mongsil/mongsil-sleep.png"),
 };
 
 /** 진행도(0~100)에 따른 표정 */
