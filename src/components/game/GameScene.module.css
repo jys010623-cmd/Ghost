@@ -38,34 +38,3 @@
   inset: 0;
   z-index: 3;
 }
-
-.rotateHint {
-  position: absolute;
-  inset: 0;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  text-align: center;
-  padding: 10%;
-  background: rgba(20, 14, 40, 0.92);
-  color: var(--c-ivory);
-  z-index: 80;
-  font-size: 1rem;
-}
-.rotateHint .spin {
-  font-size: 3rem;
-  animation: spin 2.4s ease-in-out infinite;
-}
-
-@media (max-aspect-ratio: 3/4) and (max-width: 640px) {
-  .rotateHint {
-    display: flex;
-  }
-}
-
-@keyframes spin {
-  0%, 100% { transform: rotate(-12deg); }
-  50% { transform: rotate(78deg); }
-}

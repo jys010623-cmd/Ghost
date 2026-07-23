@@ -1,25 +1,31 @@
 .viewport {
   width: 100vw;
+  width: 100dvw;
   height: 100vh;
   height: 100dvh;
   display: grid;
   place-items: center;
   overflow: hidden;
+  background: #14102a;
 }
 
+/* 기본(모바일·태블릿): 스테이지가 화면을 꽉 채운다 → 세로/가로 모두 플레이 가능 */
 .stage {
   position: relative;
-  width: min(100vw, 177.78dvh);
-  aspect-ratio: 16 / 9;
-  max-height: 100dvh;
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: #1a1330;
-  border-radius: 14px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 900px) {
+/* 큰 화면(데스크톱): 16:9 창처럼 가운데 배치 */
+@media (min-width: 900px) {
   .stage {
-    border-radius: 0;
+    width: min(100dvw, calc(100dvh * 16 / 9));
+    height: min(100dvh, calc(100dvw * 9 / 16));
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   }
 }

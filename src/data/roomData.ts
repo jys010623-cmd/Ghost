@@ -47,10 +47,10 @@ const imgFor = (type: CleanableType, variant: number) => {
 /** 거실 청소 오브젝트 — 먼지4 · 거미줄2 · 쓰레기3 · 얼룩3 = 12개 */
 export const LIVING_ROOM_ITEMS: CleanableItem[] = [
   // 먼지 (빗자루)
-  { id: "dust-1", type: "dust", x: 22, y: 74, width: 12, rotation: -6, scale: 1, maxCleanValue: 100, currentCleanValue: 100, requiredTool: "broom", image: imgFor("dust", 0) },
-  { id: "dust-2", type: "dust", x: 47, y: 82, width: 14, scale: 1.1, flip: true, maxCleanValue: 100, currentCleanValue: 100, requiredTool: "broom", image: imgFor("dust", 1) },
-  { id: "dust-3", type: "dust", x: 70, y: 78, width: 11, rotation: 8, scale: 0.9, maxCleanValue: 100, currentCleanValue: 100, requiredTool: "broom", image: imgFor("dust", 2) },
-  { id: "dust-4", type: "dust", x: 82, y: 66, width: 10, scale: 0.85, flip: true, maxCleanValue: 100, currentCleanValue: 100, requiredTool: "broom", image: imgFor("dust", 3) },
+  { id: "dust-1", type: "dust", x: 22, y: 70, width: 12, rotation: -6, scale: 1, maxCleanValue: 100, currentCleanValue: 100, requiredTool: "broom", image: imgFor("dust", 0) },
+  { id: "dust-2", type: "dust", x: 47, y: 74, width: 14, scale: 1.1, flip: true, maxCleanValue: 100, currentCleanValue: 100, requiredTool: "broom", image: imgFor("dust", 1) },
+  { id: "dust-3", type: "dust", x: 70, y: 72, width: 11, rotation: 8, scale: 0.9, maxCleanValue: 100, currentCleanValue: 100, requiredTool: "broom", image: imgFor("dust", 2) },
+  { id: "dust-4", type: "dust", x: 82, y: 64, width: 10, scale: 0.85, flip: true, maxCleanValue: 100, currentCleanValue: 100, requiredTool: "broom", image: imgFor("dust", 3) },
 
   // 거미줄 (먼지털이) — 보통 모서리 위쪽
   { id: "cobweb-1", type: "cobweb", x: 9, y: 12, width: 15, scale: 1, maxCleanValue: 120, currentCleanValue: 120, requiredTool: "duster", image: imgFor("cobweb", 0) },

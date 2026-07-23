@@ -206,11 +206,6 @@ export function GameScene({
           onReset={onExitToStart}
         />
       )}
-
-      <div className={styles.rotateHint}>
-        <span className={styles.spin}>📱</span>
-        <span>가로로 돌려서 즐겨주세요</span>
-      </div>
     </div>
   );
 }
