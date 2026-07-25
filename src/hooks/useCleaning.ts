@@ -13,6 +13,8 @@ interface UseCleaningArgs {
   pickUp: (id: string) => void;
   onWrongTool: (item: CleanableItem) => void;
   onCleaned: (item: CleanableItem) => void;
+  /** 올바른 도구로 문지르거나 주울 때마다 (연출용). */
+  onRub?: (item: CleanableItem) => void;
 }
 
 /**
@@ -26,6 +28,7 @@ export function useCleaning({
   pickUp,
   onWrongTool,
   onCleaned,
+  onRub,
 }: UseCleaningArgs) {
   return useCallback(
     (item: CleanableItem, phase: InteractPhase) => {
@@ -43,6 +46,7 @@ export function useCleaning({
         if (phase === "down") {
           pickUp(item.id);
           playSound("trash-pickup");
+          onRub?.(item);
           onCleaned(item);
         }
         return;
@@ -51,6 +55,7 @@ export function useCleaning({
       // 먼지 / 거미줄 / 얼룩: 문질러서 청소
       const before = item.currentCleanValue;
       rub(item.id, RUB_AMOUNT);
+      onRub?.(item);
       if (phase === "down") {
         playSound(item.type === "stain" ? "clean-stain" : "clean-dust");
       }
@@ -58,6 +63,6 @@ export function useCleaning({
         onCleaned(item);
       }
     },
-    [locked, selectedTool, rub, pickUp, onWrongTool, onCleaned],
+    [locked, selectedTool, rub, pickUp, onWrongTool, onCleaned, onRub],
   );
 }

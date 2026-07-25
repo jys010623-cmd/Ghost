@@ -1,0 +1,64 @@
+.layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  /* cleanables(3) 위, ghost(5) 아래에 티끌이 흩날리도록 */
+  z-index: 4;
+}
+
+.particle {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+  animation-name: fly;
+  animation-timing-function: cubic-bezier(0.2, 0.7, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+
+.img {
+  width: clamp(9px, 2.2vw, 20px);
+  height: auto;
+}
+
+.dot {
+  width: clamp(5px, 1vw, 9px);
+  height: clamp(5px, 1vw, 9px);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fly {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(calc(var(--scale) * 0.4)) rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy)))
+      scale(var(--scale)) rotate(var(--rot));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .particle {
+    animation-name: fadeOnly;
+    animation-duration: 320ms !important;
+  }
+  @keyframes fadeOnly {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(var(--scale));
+    }
+    30% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(var(--scale));
+    }
+  }
+}

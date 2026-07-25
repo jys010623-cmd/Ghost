@@ -1,11 +1,21 @@
-import type { CleanableItem, CleaningTool, CleanableType, ToolInfo } from "../types/game";
+import type {
+  CleanableItem,
+  CleaningTool,
+  CleanableType,
+  RoomDef,
+  ToolInfo,
+} from "../types/game";
 import { ASSETS } from "./assets";
 import { asset } from "../utils/asset";
+import {
+  BEDROOM_DIALOGUE,
+  FAMILY_PHOTO_MEMORY,
+  LIVING_ROOM_DIALOGUE,
+  MUSIC_BOX_MEMORY,
+} from "./dialogueData";
 
 export const ROOM_DIRTY_IMAGE = asset("/assets/rooms/living-room-dirty.webp");
 export const ROOM_CLEAN_IMAGE = asset("/assets/rooms/living-room-clean.webp");
-
-export const ROOM_GOAL = "거실을 깨끗하게 만들기";
 
 /** 도구 정의 — 손 / 걸레 / 먼지털이 / 빗자루 */
 export const TOOLS: ToolInfo[] = [
@@ -37,11 +47,12 @@ export const WRONG_TOOL_MESSAGE: Record<CleanableType, string> = {
 const imgFor = (type: CleanableType, variant: number) => {
   const filenames: Record<CleanableType, string[]> = {
     dust: ["dust-01.png", "dust-02.png", "dust-03.png", "dust-04.png"],
-    cobweb: ["cobweb-corner-01.png", "cobweb-corner-02.png"],
-    trash: ["trash-paper-01.png", "trash-paper-02.png", "trash-book-01.png"],
+    cobweb: ["cobweb-corner-01.png", "cobweb-corner-02.png", "cobweb-wide-01.png", "cobweb-small-01.png"],
+    trash: ["trash-paper-01.png", "trash-paper-02.png", "trash-book-01.png", "trash-cup-01.png"],
     stain: ["stain-floor-01.png", "stain-table-01.png", "stain-sofa-01.png"],
   };
-  return asset(`/assets/cleanables/${type}/${filenames[type][variant]}`);
+  const names = filenames[type];
+  return asset(`/assets/cleanables/${type}/${names[variant % names.length]}`);
 };
 
 /** 거실 청소 오브젝트 — 먼지4 · 거미줄2 · 쓰레기3 · 얼룩3 = 12개 */
@@ -65,6 +76,58 @@ export const LIVING_ROOM_ITEMS: CleanableItem[] = [
   { id: "stain-1", type: "stain", x: 40, y: 50, width: 14, scale: 1, maxCleanValue: 160, currentCleanValue: 160, requiredTool: "cloth", image: imgFor("stain", 0) },
   { id: "stain-2", type: "stain", x: 55, y: 40, width: 11, rotation: -5, scale: 0.9, maxCleanValue: 160, currentCleanValue: 160, requiredTool: "cloth", image: imgFor("stain", 1) },
   { id: "stain-3", type: "stain", x: 18, y: 46, width: 12, flip: true, maxCleanValue: 160, currentCleanValue: 160, requiredTool: "cloth", image: imgFor("stain", 2) },
+];
+
+/**
+ * 침실 청소 오브젝트 — 오래 방치된 방이라 거미줄이 더 많다.
+ * 먼지3 · 거미줄4 · 쓰레기3 · 얼룩3 = 13개. id 는 방 간 충돌을 피해 접두어를 붙인다.
+ */
+export const BEDROOM_ITEMS: CleanableItem[] = [
+  // 먼지 (빗자루) — 침대 아래·바닥
+  { id: "bed-dust-1", type: "dust", x: 30, y: 76, width: 13, rotation: -4, maxCleanValue: 110, currentCleanValue: 110, requiredTool: "broom", image: imgFor("dust", 0) },
+  { id: "bed-dust-2", type: "dust", x: 58, y: 80, width: 12, flip: true, maxCleanValue: 110, currentCleanValue: 110, requiredTool: "broom", image: imgFor("dust", 2) },
+  { id: "bed-dust-3", type: "dust", x: 80, y: 72, width: 10, rotation: 6, scale: 0.9, maxCleanValue: 110, currentCleanValue: 110, requiredTool: "broom", image: imgFor("dust", 1) },
+
+  // 거미줄 (먼지털이) — 방치돼 네 모서리에 가득
+  { id: "bed-cobweb-1", type: "cobweb", x: 8, y: 11, width: 16, maxCleanValue: 130, currentCleanValue: 130, requiredTool: "duster", image: imgFor("cobweb", 0) },
+  { id: "bed-cobweb-2", type: "cobweb", x: 90, y: 12, width: 16, flip: true, maxCleanValue: 130, currentCleanValue: 130, requiredTool: "duster", image: imgFor("cobweb", 1) },
+  { id: "bed-cobweb-3", type: "cobweb", x: 12, y: 40, width: 12, scale: 0.9, maxCleanValue: 130, currentCleanValue: 130, requiredTool: "duster", image: imgFor("cobweb", 2) },
+  { id: "bed-cobweb-4", type: "cobweb", x: 86, y: 44, width: 11, flip: true, scale: 0.9, maxCleanValue: 130, currentCleanValue: 130, requiredTool: "duster", image: imgFor("cobweb", 3) },
+
+  // 쓰레기 (손) — 하나는 오르골(추억)을 숨김
+  { id: "bed-trash-1", type: "trash", x: 40, y: 66, width: 9, rotation: 8, maxCleanValue: 40, currentCleanValue: 40, requiredTool: "hand", image: imgFor("trash", 3) },
+  { id: "bed-trash-2", type: "trash", x: 64, y: 58, width: 10, scale: 1.05, maxCleanValue: 40, currentCleanValue: 40, requiredTool: "hand", image: imgFor("trash", 0), hasMemory: true },
+  { id: "bed-trash-3", type: "trash", x: 24, y: 60, width: 8, flip: true, maxCleanValue: 40, currentCleanValue: 40, requiredTool: "hand", image: imgFor("trash", 2) },
+
+  // 얼룩 (걸레) — 이불·베개 자국
+  { id: "bed-stain-1", type: "stain", x: 48, y: 48, width: 15, maxCleanValue: 170, currentCleanValue: 170, requiredTool: "cloth", image: imgFor("stain", 0) },
+  { id: "bed-stain-2", type: "stain", x: 66, y: 38, width: 12, rotation: 4, scale: 0.9, maxCleanValue: 170, currentCleanValue: 170, requiredTool: "cloth", image: imgFor("stain", 2) },
+  { id: "bed-stain-3", type: "stain", x: 30, y: 42, width: 12, flip: true, maxCleanValue: 170, currentCleanValue: 170, requiredTool: "cloth", image: imgFor("stain", 1) },
+];
+
+/** 게임에 등장하는 방들 (순서대로 진행) */
+export const ROOMS: RoomDef[] = [
+  {
+    id: "living-room",
+    name: "거실",
+    goal: "거실을 깨끗하게 만들기",
+    theme: "livingRoom",
+    dirtyImage: ROOM_DIRTY_IMAGE,
+    cleanImage: ROOM_CLEAN_IMAGE,
+    items: LIVING_ROOM_ITEMS,
+    dialogue: LIVING_ROOM_DIALOGUE,
+    memory: FAMILY_PHOTO_MEMORY,
+  },
+  {
+    id: "bedroom",
+    name: "침실",
+    goal: "침실을 포근하게 되살리기",
+    theme: "bedroom",
+    // 실제 배경 그림이 아직 없어 CSS 플레이스홀더로 그려진다.
+    items: BEDROOM_ITEMS,
+    dialogue: BEDROOM_DIALOGUE,
+    memory: MUSIC_BOX_MEMORY,
+  },
 ];
 
 /** 청소 진행도(0~100)에 따른 깨끗한 배경 opacity 보간 */

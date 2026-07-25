@@ -1,18 +1,23 @@
 import { useCallback, useMemo, useState } from "react";
 import type { CleanableItem } from "../types/game";
-import { LIVING_ROOM_ITEMS } from "../data/roomData";
 
-function buildInitialItems(saved?: Record<string, number>): CleanableItem[] {
-  return LIVING_ROOM_ITEMS.map((item) => ({
+function buildInitialItems(
+  roomItems: CleanableItem[],
+  saved?: Record<string, number>,
+): CleanableItem[] {
+  return roomItems.map((item) => ({
     ...item,
     currentCleanValue:
       saved && item.id in saved ? saved[item.id] : item.maxCleanValue,
   }));
 }
 
-export function useGameProgress(savedValues?: Record<string, number>) {
+export function useGameProgress(
+  roomItems: CleanableItem[],
+  savedValues?: Record<string, number>,
+) {
   const [items, setItems] = useState<CleanableItem[]>(() =>
-    buildInitialItems(savedValues),
+    buildInitialItems(roomItems, savedValues),
   );
 
   /** 문지르기: 청소 수치를 amount 만큼 감소 */
@@ -34,8 +39,8 @@ export function useGameProgress(savedValues?: Record<string, number>) {
   }, []);
 
   const reset = useCallback(() => {
-    setItems(buildInitialItems());
-  }, []);
+    setItems(buildInitialItems(roomItems));
+  }, [roomItems]);
 
   const totalMax = useMemo(
     () => items.reduce((sum, it) => sum + it.maxCleanValue, 0),

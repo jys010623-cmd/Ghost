@@ -21,6 +21,35 @@ export const ASSETS = {
     memoryGlow: asset("/assets/effects/memory-glow.png"),
     dustParticle: asset("/assets/effects/dust-particle.png"),
   },
+  // 청소 시 튀기는 티끌 파티클 (에셋이 없으면 CSS 점으로 대체된다)
+  particles: {
+    dust: [
+      asset("/assets/effects/dust-particle.png"),
+      asset("/assets/cleanables/dust/dust-puff-01.png"),
+      asset("/assets/cleanables/dust/dust-puff-02.png"),
+    ],
+    sparkle: [
+      asset("/assets/effects/sparkle-small-01.png"),
+      asset("/assets/effects/sparkle-small-02.png"),
+    ],
+  },
+  // 몽실 프레임 애니메이션 (프레임 로드 실패 시 정적 표정 이미지로 폴백)
+  ghostAnim: {
+    idleFloat: [
+      asset("/assets/ghosts/mongsil/animation/idle-float-01.png"),
+      asset("/assets/ghosts/mongsil/animation/idle-float-02.png"),
+      asset("/assets/ghosts/mongsil/animation/idle-float-03.png"),
+      asset("/assets/ghosts/mongsil/animation/idle-float-04.png"),
+      asset("/assets/ghosts/mongsil/animation/idle-float-05.png"),
+      asset("/assets/ghosts/mongsil/animation/idle-float-06.png"),
+    ],
+    happyBounce: [
+      asset("/assets/ghosts/mongsil/animation/happy-bounce-01.png"),
+      asset("/assets/ghosts/mongsil/animation/happy-bounce-02.png"),
+      asset("/assets/ghosts/mongsil/animation/happy-bounce-03.png"),
+      asset("/assets/ghosts/mongsil/animation/happy-bounce-04.png"),
+    ],
+  },
   ui: {
     dialogueGhostFrame: asset("/assets/ui/dialogue-ghost-frame.png"),
     memoryCardDecoration: asset("/assets/ui/memory-card-decoration.png"),

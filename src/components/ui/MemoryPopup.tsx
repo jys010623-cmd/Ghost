@@ -11,7 +11,7 @@ interface MemoryPopupProps {
 
 export function MemoryPopup({ memory, onClose }: MemoryPopupProps) {
   const btnRef = useRef<HTMLButtonElement>(null);
-  const [photoOk, setPhotoOk] = useState(true);
+  const [photoOk, setPhotoOk] = useState(Boolean(memory.image));
   useEffect(() => {
     btnRef.current?.focus();
   }, []);
@@ -22,10 +22,10 @@ export function MemoryPopup({ memory, onClose }: MemoryPopupProps) {
         <AssetImage src={ASSETS.effects.memoryGlow} className={styles.glow} />
         <AssetImage src={ASSETS.ui.memoryCardDecoration} className={styles.deco} />
         <div className={styles.badge}>추억을 발견했습니다</div>
-        {photoOk ? (
+        {photoOk && memory.image ? (
           <img
             className={styles.photo}
-            src={ASSETS.memories.familyPhotoFound}
+            src={memory.image}
             alt=""
             draggable={false}
             onError={() => setPhotoOk(false)}

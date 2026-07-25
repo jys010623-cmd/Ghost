@@ -20,6 +20,11 @@
   animation: jump 0.9s var(--ease-soft) 3;
 }
 
+/* 프레임 애니메이션이 자체 움직임을 담고 있을 때는 CSS bob 을 끈다 */
+.float.noBob {
+  animation: none;
+}
+
 .glow {
   position: absolute;
   left: 50%;

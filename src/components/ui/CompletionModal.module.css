@@ -36,8 +36,37 @@
 .title {
   font-size: 1.5rem;
   font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   color: var(--c-wood-dark);
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.star {
+  font-size: 2.2rem;
+  line-height: 1;
+  transform: scale(0);
+  animation: starPop 0.5s var(--ease-soft) forwards;
+}
+
+.starOn {
+  color: var(--c-yellow-warm);
+  text-shadow: 0 0 10px rgba(255, 200, 90, 0.7);
+}
+
+.starOff {
+  color: rgba(90, 77, 110, 0.25);
+}
+
+@keyframes starPop {
+  0% { transform: scale(0) rotate(-30deg); }
+  70% { transform: scale(1.25) rotate(8deg); }
+  100% { transform: scale(1) rotate(0deg); }
 }
 
 .msg {

@@ -1,20 +1,25 @@
-import { ROOM_GOAL } from "../../data/roomData";
 import { ASSETS } from "../../data/assets";
 import { AssetImage } from "../common/AssetImage";
 import styles from "./ProgressPanel.module.css";
 
 interface ProgressPanelProps {
   progress: number;
+  goal: string;
   remaining: number;
   muted: boolean;
+  memoriesFound: number;
+  onOpenCodex: () => void;
   onToggleMute: () => void;
   onReset: () => void;
 }
 
 export function ProgressPanel({
   progress,
+  goal,
   remaining,
   muted,
+  memoriesFound,
+  onOpenCodex,
   onToggleMute,
   onReset,
 }: ProgressPanelProps) {
@@ -24,7 +29,7 @@ export function ProgressPanel({
         <div className={styles.topline}>
           <span className={styles.goal}>
             <AssetImage src={ASSETS.ui.objectiveIcon} className={styles.goalIcon} />
-            현재 목표: {ROOM_GOAL}
+            현재 목표: {goal}
           </span>
           <span className={styles.percent}>청소 진행도 {progress}%</span>
         </div>
@@ -42,6 +47,16 @@ export function ProgressPanel({
       </div>
 
       <div className={styles.controls}>
+        <button
+          type="button"
+          className={styles.ctrl}
+          onClick={onOpenCodex}
+          aria-label={`추억 보관함 (${memoriesFound}개 발견)`}
+          title="추억 보관함"
+        >
+          📖
+          {memoriesFound > 0 && <span className={styles.badge}>{memoriesFound}</span>}
+        </button>
         <button
           type="button"
           className={styles.ctrl}

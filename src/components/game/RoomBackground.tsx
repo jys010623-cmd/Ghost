@@ -1,42 +1,60 @@
 import { useState } from "react";
-import {
-  ROOM_CLEAN_IMAGE,
-  ROOM_DIRTY_IMAGE,
-  cleanBackgroundOpacity,
-} from "../../data/roomData";
+import type { RoomTheme } from "../../types/game";
+import { cleanBackgroundOpacity } from "../../data/roomData";
 import { ASSETS } from "../../data/assets";
 import { AssetImage } from "../common/AssetImage";
 import styles from "./RoomBackground.module.css";
 
 interface RoomBackgroundProps {
   progress: number;
+  theme: RoomTheme;
+  dirtyImage?: string;
+  cleanImage?: string;
 }
 
 /** CSS 로 그린 방 (이미지가 없을 때의 폴백) */
-function RoomPlaceholder({ variant }: { variant: "dirty" | "clean" }) {
+function RoomPlaceholder({
+  variant,
+  theme,
+}: {
+  variant: "dirty" | "clean";
+  theme: RoomTheme;
+}) {
   return (
-    <div className={`${styles.layer} ${styles[variant]}`}>
+    <div className={`${styles.layer} ${styles[variant]} ${styles[theme]}`}>
       <div className={styles.wall} />
       <div className={styles.floor} />
-      <div className={styles.rug} />
+      {theme === "bedroom" ? (
+        <>
+          <div className={styles.bed} />
+          <div className={styles.pillow} />
+        </>
+      ) : (
+        <div className={styles.rug} />
+      )}
     </div>
   );
 }
 
-export function RoomBackground({ progress }: RoomBackgroundProps) {
-  const [dirtyOk, setDirtyOk] = useState(true);
-  const [cleanOk, setCleanOk] = useState(true);
+export function RoomBackground({
+  progress,
+  theme,
+  dirtyImage,
+  cleanImage,
+}: RoomBackgroundProps) {
+  const [dirtyOk, setDirtyOk] = useState(Boolean(dirtyImage));
+  const [cleanOk, setCleanOk] = useState(Boolean(cleanImage));
   const cleanOpacity = cleanBackgroundOpacity(progress);
   const gloomOpacity = Math.max(0, 1 - progress / 100);
 
   return (
     <div className={styles.room} aria-hidden="true">
       {/* 더러운 방 (기본) */}
-      <RoomPlaceholder variant="dirty" />
-      {dirtyOk && (
+      <RoomPlaceholder variant="dirty" theme={theme} />
+      {dirtyImage && dirtyOk && (
         <img
           className={styles.layerImg}
-          src={ROOM_DIRTY_IMAGE}
+          src={dirtyImage}
           alt=""
           onError={() => setDirtyOk(false)}
         />
@@ -44,11 +62,11 @@ export function RoomBackground({ progress }: RoomBackgroundProps) {
 
       {/* 깨끗한 방 (진행도에 따라 서서히 나타남) */}
       <div className={styles.cleanLayer} style={{ opacity: cleanOpacity }}>
-        <RoomPlaceholder variant="clean" />
-        {cleanOk && (
+        <RoomPlaceholder variant="clean" theme={theme} />
+        {cleanImage && cleanOk && (
           <img
             className={styles.layerImg}
-            src={ROOM_CLEAN_IMAGE}
+            src={cleanImage}
             alt=""
             onError={() => setCleanOk(false)}
           />
