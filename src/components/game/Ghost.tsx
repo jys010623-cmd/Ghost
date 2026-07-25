@@ -9,6 +9,8 @@ interface GhostProps {
   mood: GhostMood;
   position: GhostPosition;
   jumping?: boolean;
+  /** 청소 지점으로 이동해 문지르는 모션 중인지 */
+  working?: boolean;
 }
 
 const MOOD_CLASS: Record<GhostMood, string> = {
@@ -33,7 +35,7 @@ const prefersReducedMotion =
   typeof window.matchMedia === "function" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-export function Ghost({ mood, position, jumping }: GhostProps) {
+export function Ghost({ mood, position, jumping, working }: GhostProps) {
   const [imgOk, setImgOk] = useState(true); // 정적 표정 이미지 로드 여부
   const [animOk, setAnimOk] = useState(true); // 프레임 애니메이션 사용 가능 여부
   const [frame, setFrame] = useState(0);
@@ -72,18 +74,23 @@ export function Ghost({ mood, position, jumping }: GhostProps) {
     }
   };
 
-  // 정지 애니메이션(bob)은 프레임 애니메이션이 돌 때만 끈다.
-  // 완료 점프(jump)는 그대로 유지.
+  // 우선순위: 완료 점프 > 청소 모션 > 프레임 애니메이션 > 기본 bob
   const floatClass = [
     styles.float,
-    jumping ? styles.jump : showFrames && imgOk ? styles.noBob : "",
+    jumping
+      ? styles.jump
+      : working
+        ? styles.working
+        : showFrames && imgOk
+          ? styles.noBob
+          : "",
   ]
     .filter(Boolean)
     .join(" ");
 
   return (
     <div
-      className={styles.anchor}
+      className={`${styles.anchor} ${working ? styles.focusing : ""}`}
       style={{ left: `${position.x}%`, top: `${position.y}%` }}
       aria-label={`유령 ${GHOST_NAME}`}
       role="img"

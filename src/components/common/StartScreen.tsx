@@ -30,8 +30,8 @@ export function StartScreen({ hasSave, onStart, onNewGame }: StartScreenProps) {
       </div>
       <h1 className={styles.title}>몽실의 방</h1>
       <p className={styles.sub}>
-        오래되고 버려진 집에{"\n"}외로운 유령 몽실이 살고 있어요.{"\n"}방을 청소해 다시
-        따뜻한 공간으로 되돌려 주세요.
+        오래되고 버려진 집,{"\n"}잠들지 못하는 유령 몽실.{"\n"}방을 하나씩 치우다
+        보면…{"\n"}무언가 떠오를지도 몰라요.
       </p>
 
       <div className={styles.actions}>
@@ -45,7 +45,7 @@ export function StartScreen({ hasSave, onStart, onNewGame }: StartScreenProps) {
         )}
       </div>
 
-      <p className={styles.hint}>가로 화면에서 즐기면 더 좋아요 · 도구는 1~4 키로도 선택</p>
+      <p className={styles.hint}>가로 화면에서 즐기면 더 좋아요 · 도구는 숫자 키로도 선택</p>
     </div>
   );
 }

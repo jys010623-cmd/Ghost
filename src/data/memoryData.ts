@@ -1,11 +1,27 @@
 import type { MemoryItem } from "../types/game";
-import { FAMILY_PHOTO_MEMORY, MUSIC_BOX_MEMORY } from "./dialogueData";
+import {
+  CRAYON_DIARY_MEMORY,
+  FAMILY_PHOTO_MEMORY,
+  MUSIC_BOX_MEMORY,
+  OLD_LETTERS_MEMORY,
+  RECIPE_NOTE_MEMORY,
+  RUBBER_DUCK_MEMORY,
+  TIME_CAPSULE_MEMORY,
+} from "./dialogueData";
 
 /**
  * 게임에 존재하는 모든 추억. 도감(MemoryCodex)이 이 목록을 기준으로
  * 발견/미발견을 표시한다. 방이 늘어나면 여기에 추가하면 된다.
  */
-export const ALL_MEMORIES: MemoryItem[] = [FAMILY_PHOTO_MEMORY, MUSIC_BOX_MEMORY];
+export const ALL_MEMORIES: MemoryItem[] = [
+  FAMILY_PHOTO_MEMORY,
+  MUSIC_BOX_MEMORY,
+  RECIPE_NOTE_MEMORY,
+  RUBBER_DUCK_MEMORY,
+  CRAYON_DIARY_MEMORY,
+  OLD_LETTERS_MEMORY,
+  TIME_CAPSULE_MEMORY,
+];
 
 /** 특정 방에 속한 추억 총 개수 */
 export function roomMemoryTotal(roomId: string): number {

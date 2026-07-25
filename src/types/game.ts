@@ -1,6 +1,21 @@
-export type CleaningTool = "hand" | "cloth" | "duster" | "broom";
+export type CleaningTool =
+  | "hand"
+  | "cloth"
+  | "duster"
+  | "broom"
+  | "spray"
+  | "brush"
+  | "rake";
 
-export type CleanableType = "dust" | "cobweb" | "trash" | "stain";
+export type CleanableType =
+  | "dust"
+  | "cobweb"
+  | "trash"
+  | "stain"
+  | "grease"
+  | "mold"
+  | "leaves"
+  | "weeds";
 
 export interface CleanableItem {
   id: string;

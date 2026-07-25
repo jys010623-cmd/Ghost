@@ -21,7 +21,7 @@ export function MemoryPopup({ memory, onClose }: MemoryPopupProps) {
       <div className={styles.card} role="dialog" aria-modal="true" aria-label="추억 발견">
         <AssetImage src={ASSETS.effects.memoryGlow} className={styles.glow} />
         <AssetImage src={ASSETS.ui.memoryCardDecoration} className={styles.deco} />
-        <div className={styles.badge}>추억을 발견했습니다</div>
+        <div className={styles.badge}>…어딘가 익숙한 기억</div>
         {photoOk && memory.image ? (
           <img
             className={styles.photo}

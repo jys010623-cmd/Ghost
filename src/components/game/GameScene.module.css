@@ -5,34 +5,6 @@
   isolation: isolate;
 }
 
-.decoration {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* 창문 빛 등 간단한 분위기 장식 (플레이스홀더) */
-.window {
-  position: absolute;
-  top: 8%;
-  left: 12%;
-  width: 20%;
-  height: 34%;
-  border-radius: 6px 6px 0 0;
-  background: linear-gradient(180deg, rgba(255, 240, 200, 0.18), rgba(180, 160, 220, 0.06));
-  border: 3px solid rgba(90, 70, 50, 0.35);
-  box-shadow: inset 0 0 20px rgba(255, 240, 200, 0.15);
-}
-.window::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(90, 70, 50, 0.35), rgba(90, 70, 50, 0.35)) 50% 0 / 3px 100% no-repeat,
-    linear-gradient(rgba(90, 70, 50, 0.35), rgba(90, 70, 50, 0.35)) 0 50% / 100% 3px no-repeat;
-}
-
 .cleanables {
   position: absolute;
   inset: 0;

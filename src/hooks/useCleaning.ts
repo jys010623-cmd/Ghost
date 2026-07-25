@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import type { CleanableItem, CleaningTool } from "../types/game";
+import { PICKUP_TYPES } from "../data/roomData";
 import { playSound } from "../utils/audio";
 
 const RUB_AMOUNT = 14;
@@ -41,8 +42,8 @@ export function useCleaning({
         return;
       }
 
-      // 쓰레기: 손으로 클릭해서 줍기 (한 번에)
-      if (item.type === "trash") {
+      // 쓰레기 / 잡초: 클릭해서 한 번에 줍기(뽑기)
+      if (PICKUP_TYPES.has(item.type)) {
         if (phase === "down") {
           pickUp(item.id);
           playSound("trash-pickup");
@@ -52,12 +53,12 @@ export function useCleaning({
         return;
       }
 
-      // 먼지 / 거미줄 / 얼룩: 문질러서 청소
+      // 먼지 / 거미줄 / 얼룩 / 기름때 / 곰팡이 / 낙엽: 문질러서 청소
       const before = item.currentCleanValue;
       rub(item.id, RUB_AMOUNT);
       onRub?.(item);
       if (phase === "down") {
-        playSound(item.type === "stain" ? "clean-stain" : "clean-dust");
+        playSound(item.type === "stain" || item.type === "mold" ? "clean-stain" : "clean-dust");
       }
       if (before > 0 && before - RUB_AMOUNT <= 0) {
         onCleaned(item);

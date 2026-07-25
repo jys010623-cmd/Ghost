@@ -8,6 +8,7 @@ interface ProgressPanelProps {
   remaining: number;
   muted: boolean;
   memoriesFound: number;
+  memoriesTotal: number;
   onOpenCodex: () => void;
   onToggleMute: () => void;
   onReset: () => void;
@@ -19,6 +20,7 @@ export function ProgressPanel({
   remaining,
   muted,
   memoriesFound,
+  memoriesTotal,
   onOpenCodex,
   onToggleMute,
   onReset,
@@ -43,7 +45,9 @@ export function ProgressPanel({
         >
           <div className={styles.fill} style={{ width: `${progress}%` }} />
         </div>
-        <div className={styles.sub}>남은 오염물 {remaining}개</div>
+        <div className={styles.sub}>
+          남은 오염물 {remaining}개 · 추억 {memoriesFound}/{memoriesTotal}
+        </div>
       </div>
 
       <div className={styles.controls}>

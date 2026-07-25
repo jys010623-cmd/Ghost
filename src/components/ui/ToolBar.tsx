@@ -1,9 +1,9 @@
 import { useState } from "react";
 import type { CleaningTool, ToolInfo } from "../../types/game";
-import { TOOLS } from "../../data/roomData";
 import styles from "./ToolBar.module.css";
 
 interface ToolBarProps {
+  tools: ToolInfo[];
   selected: CleaningTool;
   onSelect: (tool: CleaningTool) => void;
 }
@@ -28,10 +28,10 @@ function ToolIcon({ tool }: { tool: ToolInfo }) {
   );
 }
 
-export function ToolBar({ selected, onSelect }: ToolBarProps) {
+export function ToolBar({ tools, selected, onSelect }: ToolBarProps) {
   return (
     <div className={styles.bar} role="toolbar" aria-label="청소 도구 선택">
-      {TOOLS.map((tool) => {
+      {tools.map((tool) => {
         const active = tool.id === selected;
         return (
           <button

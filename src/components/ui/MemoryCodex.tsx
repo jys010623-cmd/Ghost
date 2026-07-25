@@ -52,10 +52,13 @@ function MemoryCard({ memory, isFound }: { memory: MemoryItem; isFound: boolean 
 /** 발견한 추억을 모아 보는 도감. */
 export function MemoryCodex({ found, onClose }: MemoryCodexProps) {
   const btnRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const foundCount = ALL_MEMORIES.filter((m) => found.has(m.id)).length;
 
   useEffect(() => {
-    btnRef.current?.focus();
+    // 항상 맨 위에서 시작하고, 포커스 때문에 스크롤이 내려가지 않게 한다
+    if (panelRef.current) panelRef.current.scrollTop = 0;
+    btnRef.current?.focus({ preventScroll: true });
   }, []);
 
   // ESC 로 닫기
@@ -70,6 +73,7 @@ export function MemoryCodex({ found, onClose }: MemoryCodexProps) {
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div
+        ref={panelRef}
         className={styles.panel}
         role="dialog"
         aria-modal="true"

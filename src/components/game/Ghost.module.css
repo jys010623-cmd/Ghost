@@ -25,6 +25,22 @@
   animation: none;
 }
 
+/* 청소 지점으로 이동할 땐 더 빠르게 미끄러진다 */
+.anchor.focusing {
+  transition: left 0.6s var(--ease-soft), top 0.6s var(--ease-soft);
+  z-index: 6;
+}
+
+/* 무언가를 치우는 문지르기 모션 */
+.float.working {
+  animation: scrub 0.42s ease-in-out infinite;
+}
+
+@keyframes scrub {
+  0%, 100% { transform: translateY(0) rotate(-7deg); }
+  50% { transform: translateY(-5px) rotate(7deg); }
+}
+
 .glow {
   position: absolute;
   left: 50%;

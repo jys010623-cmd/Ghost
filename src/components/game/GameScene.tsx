@@ -1,12 +1,13 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type {
   CleaningTool,
   DialogueContent,
+  GhostPosition,
   MemoryItem,
   RoomDef,
 } from "../../types/game";
 import type { CleanableItem as CleanableItemData } from "../../types/game";
-import { TOOLS, WRONG_TOOL_MESSAGE } from "../../data/roomData";
+import { WRONG_TOOL_MESSAGE, toolsForItems } from "../../data/roomData";
 import { moodForProgress, stageForProgress } from "../../data/ghostData";
 import { useGameProgress } from "../../hooks/useGameProgress";
 import { useGhostMovement } from "../../hooks/useGhostMovement";
@@ -14,6 +15,7 @@ import { useCleaning } from "../../hooks/useCleaning";
 import { useParticles } from "../../hooks/useParticles";
 import { ASSETS } from "../../data/assets";
 import {
+  ALL_MEMORIES,
   computeStars,
   roomMemoryFound,
   roomMemoryTotal,
@@ -31,6 +33,7 @@ import { DialogueBox } from "../ui/DialogueBox";
 import { MemoryPopup } from "../ui/MemoryPopup";
 import { MemoryCodex } from "../ui/MemoryCodex";
 import { CompletionModal } from "../ui/CompletionModal";
+import { EndingScene } from "../ui/EndingScene";
 import { Toast } from "../ui/Toast";
 import styles from "./GameScene.module.css";
 
@@ -61,7 +64,12 @@ export function GameScene({
   const { intro, stages } = room.dialogue;
   const completionDialogue = stages[3];
 
-  const [selectedTool, setSelectedTool] = useState<CleaningTool>("broom");
+  // 이 방에서 실제로 쓰는 도구만 (툴바·단축키)
+  const roomTools = useMemo(() => toolsForItems(room.items), [room.items]);
+
+  const [selectedTool, setSelectedTool] = useState<CleaningTool>(
+    () => roomTools[0]?.id ?? "hand",
+  );
   const [shownStages, setShownStages] = useState<Set<number>>(
     () => new Set(initialSave?.shownStages ?? []),
   );
@@ -90,7 +98,34 @@ export function GameScene({
   const toastTimer = useRef<number | null>(null);
   const lastBurst = useRef(0);
 
+  // 청소하는 지점으로 몽실을 이동시키고 문지르는 모션을 준다
+  const [ghostFocus, setGhostFocus] = useState<GhostPosition | null>(null);
+  const [ghostWorking, setGhostWorking] = useState(false);
+  const focusTimer = useRef<number | null>(null);
+  // 추억 팝업이 떠 있는 동안 완료 대사를 미뤄두기 위한 플래그
+  const pendingCompletion = useRef(false);
+
   const { particles, burst, remove } = useParticles();
+
+  const focusGhostOn = useCallback((item: CleanableItemData) => {
+    // 오브젝트 살짝 위에 떠서 문지르도록 위치 보정
+    const x = Math.min(90, Math.max(10, item.x));
+    const y = Math.min(86, Math.max(20, item.y - 10));
+    setGhostFocus({ x, y });
+    setGhostWorking(true);
+    if (focusTimer.current) window.clearTimeout(focusTimer.current);
+    focusTimer.current = window.setTimeout(() => {
+      setGhostWorking(false);
+      setGhostFocus(null);
+    }, 1300);
+  }, []);
+
+  useEffect(
+    () => () => {
+      if (focusTimer.current) window.clearTimeout(focusTimer.current);
+    },
+    [],
+  );
 
   const showToast = useCallback((msg: string) => {
     setToast(msg);
@@ -105,7 +140,9 @@ export function GameScene({
     showCompletion ||
     showCodex;
 
-  const ghostPosition = useGhostMovement(!locked);
+  // 청소 지점(focus)이 있으면 그곳으로, 없으면 자유롭게 배회
+  const wanderPosition = useGhostMovement(!locked && ghostFocus === null);
+  const ghostPosition = ghostFocus ?? wanderPosition;
 
   // 첫 진입 시 인트로 대화 (이미 완료된 방을 이어서 열 때는 생략)
   useEffect(() => {
@@ -126,9 +163,10 @@ export function GameScene({
     [showToast],
   );
 
-  // 문지르는 동안 티끌이 튀도록 (과도한 생성 방지를 위해 살짝 스로틀)
+  // 청소할 때: 몽실을 그 지점으로 보내 문지르게 하고, 티끌을 튀긴다
   const onRub = useCallback(
     (item: CleanableItemData) => {
+      focusGhostOn(item);
       const now = performance.now();
       if (now - lastBurst.current < 55) return;
       lastBurst.current = now;
@@ -139,7 +177,7 @@ export function GameScene({
         spread: 46,
       });
     },
-    [burst],
+    [burst, focusGhostOn],
   );
 
   const onCleaned = useCallback(
@@ -185,11 +223,17 @@ export function GameScene({
       setCompleted(true);
       playSound("room-complete");
       playSound("ghost-happy");
-      setDialogue(completionDialogue);
+      // 추억 오브젝트를 맨 마지막에 치운 경우: 추억 팝업이 떠 있으면
+      // 완료 대사를 팝업이 닫힌 뒤로 미뤄 겹침을 막는다
+      if (memoryPopup !== null) {
+        pendingCompletion.current = true;
+      } else {
+        setDialogue(completionDialogue);
+      }
     } else if (!locked) {
       setDialogue(stages[stage]);
     }
-  }, [progress, introSeen, shownStages, locked, stages, completionDialogue]);
+  }, [progress, introSeen, shownStages, locked, stages, completionDialogue, memoryPopup]);
 
   // 완료 대화가 닫히면 완료 카드 표시
   const handleDialogueClose = useCallback(() => {
@@ -200,15 +244,24 @@ export function GameScene({
     }
   }, [dialogue, completionDialogue]);
 
-  // 도구 단축키 (1~4)
+  // 추억 팝업을 닫을 때, 미뤄둔 완료 대사가 있으면 이제 표시한다
+  const handleMemoryClose = useCallback(() => {
+    setMemoryPopup(null);
+    if (pendingCompletion.current) {
+      pendingCompletion.current = false;
+      setDialogue(completionDialogue);
+    }
+  }, [completionDialogue]);
+
+  // 도구 단축키 — 이 방에서 쓰는 도구만
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      const tool = TOOLS.find((t) => t.shortcut === e.key);
+      const tool = roomTools.find((t) => t.shortcut === e.key);
       if (tool) setSelectedTool(tool.id);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [roomTools]);
 
   // 상태 저장
   useEffect(() => {
@@ -248,10 +301,6 @@ export function GameScene({
         cleanImage={room.cleanImage}
       />
 
-      <div className={styles.decoration}>
-        <div className={styles.window} />
-      </div>
-
       <div className={styles.cleanables}>
         {visibleItems.map((item) => (
           <CleanableItem
@@ -265,7 +314,12 @@ export function GameScene({
 
       <ParticleLayer particles={particles} onDone={remove} />
 
-      <Ghost mood={ghostMood} position={ghostPosition} jumping={completed} />
+      <Ghost
+        mood={ghostMood}
+        position={ghostPosition}
+        jumping={completed}
+        working={ghostWorking}
+      />
 
       <CleaningEffects active={completed} />
 
@@ -275,30 +329,40 @@ export function GameScene({
         remaining={remainingCount}
         muted={muted}
         memoriesFound={foundMemories.size}
+        memoriesTotal={ALL_MEMORIES.length}
         onOpenCodex={() => setShowCodex(true)}
         onToggleMute={onToggleMute}
         onReset={onExitToStart}
       />
 
-      <ToolBar selected={selectedTool} onSelect={setSelectedTool} />
+      <ToolBar tools={roomTools} selected={selectedTool} onSelect={setSelectedTool} />
 
       <Toast message={toast} />
 
       {dialogue && <DialogueBox content={dialogue} onClose={handleDialogueClose} />}
 
       {memoryPopup && (
-        <MemoryPopup memory={memoryPopup} onClose={() => setMemoryPopup(null)} />
+        <MemoryPopup memory={memoryPopup} onClose={handleMemoryClose} />
       )}
 
-      {showCompletion && (
+      {showCompletion && !isLastRoom && (
         <CompletionModal
           roomName={room.name}
-          isLastRoom={isLastRoom}
+          isLastRoom={false}
           stars={computeStars(mistakes, roomFound, roomTotal)}
           memoriesFound={roomFound}
           memoriesTotal={roomTotal}
           onOpenCodex={() => setShowCodex(true)}
           onNextRoom={onNextRoom}
+          onReset={onExitToStart}
+        />
+      )}
+
+      {showCompletion && isLastRoom && (
+        <EndingScene
+          memoriesFound={foundMemories.size}
+          memoriesTotal={ALL_MEMORIES.length}
+          onOpenCodex={() => setShowCodex(true)}
           onReset={onExitToStart}
         />
       )}

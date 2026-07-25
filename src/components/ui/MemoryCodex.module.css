@@ -20,6 +20,12 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft), var(--shadow-glow);
   animation: pop 0.45s var(--ease-soft);
+  /* 스크롤바 숨김 (스크롤 기능은 유지) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.panel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 .header {

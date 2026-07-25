@@ -11,6 +11,9 @@ export const ASSETS = {
     cloth: asset("/assets/tools/tool-cloth.png"),
     duster: asset("/assets/tools/tool-duster.png"),
     broom: asset("/assets/tools/tool-broom.png"),
+    spray: asset("/assets/tools/tool-spray.png"),
+    brush: asset("/assets/tools/tool-brush.png"),
+    rake: asset("/assets/tools/tool-rake.png"),
   },
   effects: {
     sparkleSmall01: asset("/assets/effects/sparkle-small-01.png"),
@@ -60,6 +63,12 @@ export const ASSETS = {
   memories: {
     familyPhotoFound: asset("/assets/memories/family-photo-found.png"),
     familyPhotoRestored: asset("/assets/memories/family-photo-restored.png"),
+    musicBox: asset("/assets/memories/music-box.png"),
+    recipeNote: asset("/assets/memories/recipe-note.png"),
+    rubberDuck: asset("/assets/memories/rubber-duck.png"),
+    oldLetters: asset("/assets/memories/old-letters.png"),
+    crayonDiary: asset("/assets/memories/crayon-diary.png"),
+    timeCapsule: asset("/assets/memories/time-capsule.png"),
   },
   overlays: {
     warm30: asset("/assets/rooms/overlays/warm-light-30.png"),
