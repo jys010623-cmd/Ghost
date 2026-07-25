@@ -1,0 +1,1005 @@
+{
+  "newProductionAssetCount": 45,
+  "rooms": [
+    {
+      "room": "bedroom",
+      "files": [
+        "public/assets/rooms/bedroom-dirty.webp",
+        "public/assets/rooms/bedroom-clean.webp"
+      ],
+      "sizes": [
+        [
+          2048,
+          1152
+        ],
+        [
+          2048,
+          1152
+        ]
+      ],
+      "formats": [
+        "WEBP",
+        "WEBP"
+      ],
+      "edgeCorrelation": 0.8454,
+      "ok": true
+    },
+    {
+      "room": "kitchen",
+      "files": [
+        "public/assets/rooms/kitchen-dirty.webp",
+        "public/assets/rooms/kitchen-clean.webp"
+      ],
+      "sizes": [
+        [
+          2048,
+          1152
+        ],
+        [
+          2048,
+          1152
+        ]
+      ],
+      "formats": [
+        "WEBP",
+        "WEBP"
+      ],
+      "edgeCorrelation": 0.8269,
+      "ok": true
+    },
+    {
+      "room": "bathroom",
+      "files": [
+        "public/assets/rooms/bathroom-dirty.webp",
+        "public/assets/rooms/bathroom-clean.webp"
+      ],
+      "sizes": [
+        [
+          2048,
+          1152
+        ],
+        [
+          2048,
+          1152
+        ]
+      ],
+      "formats": [
+        "WEBP",
+        "WEBP"
+      ],
+      "edgeCorrelation": 0.805,
+      "ok": true
+    },
+    {
+      "room": "attic",
+      "files": [
+        "public/assets/rooms/attic-dirty.webp",
+        "public/assets/rooms/attic-clean.webp"
+      ],
+      "sizes": [
+        [
+          2048,
+          1152
+        ],
+        [
+          2048,
+          1152
+        ]
+      ],
+      "formats": [
+        "WEBP",
+        "WEBP"
+      ],
+      "edgeCorrelation": 0.8218,
+      "ok": true
+    },
+    {
+      "room": "child-room",
+      "files": [
+        "public/assets/rooms/child-room-dirty.webp",
+        "public/assets/rooms/child-room-clean.webp"
+      ],
+      "sizes": [
+        [
+          2048,
+          1152
+        ],
+        [
+          2048,
+          1152
+        ]
+      ],
+      "formats": [
+        "WEBP",
+        "WEBP"
+      ],
+      "edgeCorrelation": 0.8664,
+      "ok": true
+    },
+    {
+      "room": "garden",
+      "files": [
+        "public/assets/rooms/garden-dirty.webp",
+        "public/assets/rooms/garden-clean.webp"
+      ],
+      "sizes": [
+        [
+          2048,
+          1152
+        ],
+        [
+          2048,
+          1152
+        ]
+      ],
+      "formats": [
+        "WEBP",
+        "WEBP"
+      ],
+      "edgeCorrelation": 0.7984,
+      "ok": true
+    }
+  ],
+  "sprites": [
+    {
+      "path": "public/assets/tools/tool-spray.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        148,
+        28,
+        363,
+        484
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/tools/tool-brush.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        59,
+        28,
+        452,
+        484
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/tools/tool-rake.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        46,
+        28,
+        465,
+        484
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/tools/tool-sponge.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        28,
+        35,
+        484,
+        476
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/grease/grease-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        105,
+        471,
+        407
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/grease/grease-02.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        85,
+        471,
+        426
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/grease/grease-03.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        59,
+        471,
+        452
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/mold/mold-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        68,
+        471,
+        443
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/mold/mold-02.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        70,
+        41,
+        441,
+        471
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/mold/mold-03.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        118,
+        41,
+        393,
+        471
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/leaves/leaves-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        105,
+        471,
+        407
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/leaves/leaves-02.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        80,
+        471,
+        432
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/leaves/leaves-03.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        88,
+        471,
+        423
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/weeds/weeds-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        98,
+        471,
+        413
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/weeds/weeds-02.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        96,
+        471,
+        416
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/weeds/weeds-03.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        203,
+        471,
+        308
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/trash/trash-dishes-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        89,
+        471,
+        423
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/trash/trash-bag-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        70,
+        471,
+        442
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/trash/trash-bottle-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        144,
+        41,
+        367,
+        471
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/trash/trash-towel-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        85,
+        471,
+        427
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/trash/trash-box-02.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        64,
+        471,
+        448
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/trash/trash-newspaper-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        87,
+        471,
+        425
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/trash/toy-blocks-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        66,
+        471,
+        445
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/trash/toy-ball-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        54,
+        41,
+        458,
+        471
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/trash/toy-bear-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        78,
+        41,
+        433,
+        471
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/trash/trash-branch-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        65,
+        471,
+        447
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/cleanables/trash/trash-pot-01.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        512,
+        512
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        41,
+        58,
+        471,
+        453
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/memories/music-box.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        1024,
+        1024
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        185,
+        82,
+        839,
+        942
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/memories/recipe-note.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        1024,
+        1024
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        82,
+        108,
+        942,
+        916
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/memories/rubber-duck.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        1024,
+        1024
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        115,
+        82,
+        908,
+        942
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/memories/old-letters.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        1024,
+        1024
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        82,
+        129,
+        942,
+        894
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/memories/crayon-diary.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        1024,
+        1024
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        130,
+        82,
+        894,
+        942
+      ],
+      "ok": true
+    },
+    {
+      "path": "public/assets/memories/time-capsule.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "expectedSize": [
+        1024,
+        1024
+      ],
+      "sizeOk": true,
+      "transparentCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaBbox": [
+        197,
+        82,
+        827,
+        942
+      ],
+      "ok": true
+    }
+  ],
+  "manifestMissingPaths": [],
+  "allOk": true
+}

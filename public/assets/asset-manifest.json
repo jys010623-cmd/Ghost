@@ -10,6 +10,30 @@
         "window": "/assets/rooms/overlays/window-light.png",
         "fireplace": "/assets/rooms/overlays/fireplace-glow.png"
       }
+    },
+    "bedroom": {
+      "dirty": "/assets/rooms/bedroom-dirty.webp",
+      "clean": "/assets/rooms/bedroom-clean.webp"
+    },
+    "kitchen": {
+      "dirty": "/assets/rooms/kitchen-dirty.webp",
+      "clean": "/assets/rooms/kitchen-clean.webp"
+    },
+    "bathroom": {
+      "dirty": "/assets/rooms/bathroom-dirty.webp",
+      "clean": "/assets/rooms/bathroom-clean.webp"
+    },
+    "attic": {
+      "dirty": "/assets/rooms/attic-dirty.webp",
+      "clean": "/assets/rooms/attic-clean.webp"
+    },
+    "childRoom": {
+      "dirty": "/assets/rooms/child-room-dirty.webp",
+      "clean": "/assets/rooms/child-room-clean.webp"
+    },
+    "garden": {
+      "dirty": "/assets/rooms/garden-dirty.webp",
+      "clean": "/assets/rooms/garden-clean.webp"
     }
   },
   "ghosts": {
@@ -60,24 +84,65 @@
       "/assets/cleanables/stain/stain-sofa-01.png",
       "/assets/cleanables/stain/stain-window-01.png"
     ],
+    "grease": [
+      "/assets/cleanables/grease/grease-01.png",
+      "/assets/cleanables/grease/grease-02.png",
+      "/assets/cleanables/grease/grease-03.png"
+    ],
+    "mold": [
+      "/assets/cleanables/mold/mold-01.png",
+      "/assets/cleanables/mold/mold-02.png",
+      "/assets/cleanables/mold/mold-03.png"
+    ],
+    "leaves": [
+      "/assets/cleanables/leaves/leaves-01.png",
+      "/assets/cleanables/leaves/leaves-02.png",
+      "/assets/cleanables/leaves/leaves-03.png"
+    ],
+    "weeds": [
+      "/assets/cleanables/weeds/weeds-01.png",
+      "/assets/cleanables/weeds/weeds-02.png",
+      "/assets/cleanables/weeds/weeds-03.png"
+    ],
     "trash": [
       "/assets/cleanables/trash/trash-paper-01.png",
       "/assets/cleanables/trash/trash-paper-02.png",
       "/assets/cleanables/trash/trash-cup-01.png",
       "/assets/cleanables/trash/trash-box-01.png",
       "/assets/cleanables/trash/trash-book-01.png",
-      "/assets/cleanables/trash/trash-leaf-01.png"
+      "/assets/cleanables/trash/trash-leaf-01.png",
+      "/assets/cleanables/trash/trash-dishes-01.png",
+      "/assets/cleanables/trash/trash-bag-01.png",
+      "/assets/cleanables/trash/trash-bottle-01.png",
+      "/assets/cleanables/trash/trash-towel-01.png",
+      "/assets/cleanables/trash/trash-box-02.png",
+      "/assets/cleanables/trash/trash-newspaper-01.png",
+      "/assets/cleanables/trash/toy-blocks-01.png",
+      "/assets/cleanables/trash/toy-ball-01.png",
+      "/assets/cleanables/trash/toy-bear-01.png",
+      "/assets/cleanables/trash/trash-branch-01.png",
+      "/assets/cleanables/trash/trash-pot-01.png"
     ]
   },
   "memories": {
     "familyPhotoFound": "/assets/memories/family-photo-found.png",
-    "familyPhotoRestored": "/assets/memories/family-photo-restored.png"
+    "familyPhotoRestored": "/assets/memories/family-photo-restored.png",
+    "musicBox": "/assets/memories/music-box.png",
+    "recipeNote": "/assets/memories/recipe-note.png",
+    "rubberDuck": "/assets/memories/rubber-duck.png",
+    "oldLetters": "/assets/memories/old-letters.png",
+    "crayonDiary": "/assets/memories/crayon-diary.png",
+    "timeCapsule": "/assets/memories/time-capsule.png"
   },
   "tools": {
     "hand": "/assets/tools/tool-hand.png",
     "cloth": "/assets/tools/tool-cloth.png",
     "duster": "/assets/tools/tool-duster.png",
-    "broom": "/assets/tools/tool-broom.png"
+    "broom": "/assets/tools/tool-broom.png",
+    "spray": "/assets/tools/tool-spray.png",
+    "brush": "/assets/tools/tool-brush.png",
+    "rake": "/assets/tools/tool-rake.png",
+    "sponge": "/assets/tools/tool-sponge.png"
   },
   "effects": {
     "sparkleSmall01": "/assets/effects/sparkle-small-01.png",
